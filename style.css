@@ -622,6 +622,14 @@ form {
     display: flex;
 }
 
+.question-inputs .validate {
+    margin-right: auto;
+    padding-top: 1rem;
+    display: none;
+    color: var(--color-danger);
+    font-weight: 700;
+    font-size: 1rem;
+}
 
 
 

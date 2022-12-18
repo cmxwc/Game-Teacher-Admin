@@ -1,7 +1,10 @@
+import {http_url, fetchData, } from './request.js';
+
 const sideMenu = document.querySelector("aside");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggle")
+
 
 // show sidebar
 menuBtn.addEventListener('click', () =>{
@@ -34,3 +37,14 @@ Orders.forEach(order => {
     tr.innerHTML = trContent;
     document.querySelector('table tbody').appendChild(tr)
 })
+
+// fetch(http_url+"get_userData_all")
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error));
+
+// fetchData(http_url+"get_userData_all");
+
+const spacegirl = await fetchData(http_url+"get_userData?username="+"spacegirl");
+console.log(spacegirl)
+console.log("hello why"+ spacegirl.classNumber);
