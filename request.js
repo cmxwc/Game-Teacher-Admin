@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/"
+const url = "https://localhost:8000/"
 
 
 fetch(url+"get_userData_all")
