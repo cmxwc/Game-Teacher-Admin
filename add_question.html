@@ -11,6 +11,8 @@
       rel="stylesheet">
     <!--Stylesheet-->
     <link rel="stylesheet" href="./style.css">
+    <!--Read Excel Files-->
+
 </head>
 <body>
     <div class="container">
@@ -48,19 +50,79 @@
         </aside>
         <!---------------------- End of Sidebar -------------------->
         <main>
-            <h1>Question Database</h1>
+            <h1>Add Question</h1>
+
+            <div class="upload-question">
+                <input type="file" id="input">
+            </div>
+
+            <div class="question-inputs">
+                <form>
+                    <label for="subject">Choose Subject:</label>
+                    <select id="subject" name="subject" style="width: 200px;">
+                        <option value="English">English</option>
+                        <option value="Maths">Maths</option>
+                        <option value="Geography">Geography</option>
+                    </select>
+
+                    <label for="topic">Choose Topic:</label>
+                    <select id="topic" name="topic" style="width: 200px;">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                    </select>
+
+                    <label for="learning">Choose Learning Objective:</label>
+                    <select id="learning" name="learning" style="width: 200px;">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                    </select>
+                </form>
+                <form >
+                    <label for="question-text">Enter question text:</label>
+                    <textarea rows="5" cols="60" name="question-text" placeholder="Enter question..."></textarea>
+                </form>
+                <h2>Choices:</h2>
+                <form>
+                    <label for="choice-1">Enter option 1:</label>
+                    <textarea rows="5" cols="60" name="choice-1" placeholder="Enter option 1..."></textarea>
+                </form>
+                <form>
+                    <label for="option-2">Enter option 2:</label>
+                    <textarea rows="5" cols="60" name="choice-2" placeholder="Enter option 2..."></textarea>
+                </form>
+                <form>
+                    <label for="option-3">Enter option 3:</label>
+                    <textarea rows="5" cols="60" name="choice-3" placeholder="Enter option 2..."></textarea>
+                </form>
+                <form>
+                    <label for="option-4">Enter option 4:</label>
+                    <textarea rows="5" cols="60" name="choice-4" placeholder="Enter option 2..."></textarea>
+                </form>
+                    
+                <form>
+                    <label for="answer">Answer:</label>
+                    <select id="answer" name="answer">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                    </select>
+                </form>
+                <div>
+                    <input type="submit" value="Create Question" id="create-question">    
+                </div>
+                
+            </div>
 
             <div class="question">
-                
-                <a href="add_question.html" class="select add-question">
-                    
-                        <button>
-                            <span class="material-icons-round">note_add</span>
-                        </button>
-                        <h2>Add Questions</h2>
-                    
-                </a>    
-                
+                <div class="select add-question">
+                    <button>
+                        <span class="material-icons-round">note_add</span>
+                    </button>
+                    <h2>Add Questions</h2>
+                </div>
                 <div class="select view-question">
                     <button>
                         <span class="material-icons-round">view_list</span>
