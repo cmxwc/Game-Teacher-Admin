@@ -57,80 +57,76 @@
             </div>
 
             <div class="question-inputs">
-                <form>
-                    <label for="subject">Choose Subject:</label>
-                    <select id="subject" name="subject" style="width: 200px;">
-                        <option value="English">English</option>
-                        <option value="Maths">Maths</option>
-                        <option value="Geography">Geography</option>
-                    </select>
-
-                    <label for="topic">Choose Topic:</label>
-                    <select id="topic" name="topic" style="width: 200px;">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                    </select>
-
-                    <label for="learning">Choose Learning Objective:</label>
-                    <select id="learning" name="learning" style="width: 200px;">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                    </select>
+                <form id="form" action="/">
+                    <div>
+                        <label for="question-id">Question Id:</label>
+                        <input id="question-id" type="number" required step="1" pattern="\d+" min="0" style="width: 200px;">
+                    </div>
+                    <div>
+                        <label for="subject">Choose Subject:</label>
+                        <select id="subject" name="subject" style="width: 200px;">
+                            <option value="English">English</option>
+                            <option value="Maths">Maths</option>
+                            <option value="Geography">Geography</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="topic">Choose Topic:</label>
+                        <select id="topic" name="topic" style="width: 200px;">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="learning">Choose Learning Objective:</label>
+                        <select id="learning" name="learning" style="width: 200px;">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </div>
+                    <div >
+                        <label for="question-text">Enter question text:</label>
+                        <textarea rows="5" cols="60" id="question-text" required placeholder="Enter question..."></textarea>
+                    </div>
+                    <h2>Choices:</h2>
+                    <div>
+                        <label for="choice-1">Enter option 1:</label>
+                        <textarea rows="5" cols="60" id="choice-1" required placeholder="Enter option 1..."></textarea>
+                    </div>
+                    <div>
+                        <label for="option-2">Enter option 2:</label>
+                        <textarea rows="5" cols="60" id="choice-2" required placeholder="Enter option 2..."></textarea>
+                    </div>
+                    <div>
+                        <label for="option-3">Enter option 3:</label>
+                        <textarea rows="5" cols="60" id="choice-3" required placeholder="Enter option 3..."></textarea>
+                    </div>
+                    <div>
+                        <label for="option-4">Enter option 4:</label>
+                        <textarea rows="5" cols="60" id="choice-4" required placeholder="Enter option 4..."></textarea>
+                    </div>
+                        
+                    <div>
+                        <label for="answer">Answer:</label>
+                        <select id="answer" name="answer">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select>
+                    </div>
+                    <div class="submit-btn">
+                        
+                        <input type="submit" value="Create Question" id="create-question">    
+                    </div>
                 </form>
-                <form >
-                    <label for="question-text">Enter question text:</label>
-                    <textarea rows="5" cols="60" name="question-text" placeholder="Enter question..."></textarea>
-                </form>
-                <h2>Choices:</h2>
-                <form>
-                    <label for="choice-1">Enter option 1:</label>
-                    <textarea rows="5" cols="60" name="choice-1" placeholder="Enter option 1..."></textarea>
-                </form>
-                <form>
-                    <label for="option-2">Enter option 2:</label>
-                    <textarea rows="5" cols="60" name="choice-2" placeholder="Enter option 2..."></textarea>
-                </form>
-                <form>
-                    <label for="option-3">Enter option 3:</label>
-                    <textarea rows="5" cols="60" name="choice-3" placeholder="Enter option 2..."></textarea>
-                </form>
-                <form>
-                    <label for="option-4">Enter option 4:</label>
-                    <textarea rows="5" cols="60" name="choice-4" placeholder="Enter option 2..."></textarea>
-                </form>
-                    
-                <form>
-                    <label for="answer">Answer:</label>
-                    <select id="answer" name="answer">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                    </select>
-                </form>
-                <div>
-                    <p class="validate">check inputs!!!!!!!!!!!!!!!!!!!!!!</p>
-                    <input type="submit" value="Create Question" id="create-question">    
-                </div>
+                <p class="validate">check inputs!!!!!!!!!!!!!!!!!!!!!!</p>
                 
             </div>
 
-            <div class="question">
-                <div class="select add-question">
-                    <button>
-                        <span class="material-icons-round">note_add</span>
-                    </button>
-                    <h2>Add Questions</h2>
-                </div>
-                <div class="select view-question">
-                    <button>
-                        <span class="material-icons-round">view_list</span>
-                    </button>
-                    <h2>View and Modify Questions</h2>
-                </div>
-            </div>
+            
             <!---------------------- End of Question Button -------------------->
 
             <div class="recent-games">
@@ -271,7 +267,9 @@
 
     </div>
 
-    <script src="./scripts/orders.js"></script>
-    <script type="module" src="./scripts/add_question.js"></script>
+    
 </body>
+<script src="./scripts/orders.js"></script>
+<script type="module" src="./scripts/index.js"></script>
+<script type="module" src="./scripts/add_question.js"></script>
 </html>

@@ -45,6 +45,6 @@ Orders.forEach(order => {
 
 // fetchData(http_url+"get_userData_all");
 
-const spacegirl = await fetchData(http_url+"get_userData?username="+"spacegirl");
-console.log(spacegirl)
-console.log("hello why"+ spacegirl.classNumber);
+// const spacegirl = await fetchData(http_url+"get_userData?username="+"spacegirl");
+// console.log(spacegirl)
+// console.log("hello why"+ spacegirl.classNumber);
