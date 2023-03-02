@@ -1,4 +1,4 @@
-import { http_url, fetchData, postData } from './request.js';
+import { http_url, getData, fetchData, postData } from './request.js';
 
 // const login = document.getElementById("login")
 const submit = document.getElementById("submit")
@@ -17,6 +17,7 @@ submit.addEventListener("click", async(e) => {
     var password = document.getElementById("password").value;
     console.log("The username is " + username + " the password is " + password)
     let teacherLogin = new TeacherLogin(username, password)
-    const response = await postData(http_url + "login_teacher", teacherLogin);
+    const response1 = await fetchData(http_url + "get_teachera", teacherLogin);
+    const response = await getData(http_url + "login_teacher", teacherLogin);
     console.log(response)
 }) 
