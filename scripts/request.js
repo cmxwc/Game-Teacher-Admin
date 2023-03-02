@@ -39,24 +39,6 @@ async function fetchData(url) {
   }
 }
 
-async function getData(url) {
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      ...options
-    });
-    const data = await response.json();
-    console.log(data)
-    return data;
-  } catch (error) {
-    return console.error(error);
-  }
-}
-
 async function postData(url, body, options) {
   try {
     const response = await fetch(url, {
@@ -77,4 +59,4 @@ async function postData(url, body, options) {
 
 
 
-export {http_url, fetchData, postData, getData};
+export {http_url, fetchData, postData};
