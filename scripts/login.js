@@ -17,7 +17,7 @@ submit.addEventListener("click", async(e) => {
     var password = document.getElementById("password").value;
     console.log("The username is " + username + " the password is " + password)
     let teacherLogin = new TeacherLogin(username, password)
-    const response1 = await fetchData(http_url + "get_teachera", teacherLogin);
+    const response1 = await fetchData(http_url + "get_teachers", teacherLogin);
     const response = await getData(http_url + "login_teacher", teacherLogin);
     console.log(response)
 }) 
