@@ -1,4 +1,5 @@
-const http_url = "http://localhost:8000/"
+// const http_url = "http://localhost:8000/"
+const http_url = "https://space_backend-1-f3793365.deta.app/"
 
 
 

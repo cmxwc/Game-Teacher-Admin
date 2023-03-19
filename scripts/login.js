@@ -14,13 +14,13 @@ class TeacherLogin{
 submit.addEventListener("click", async(e) => {
     e.preventDefault(); // prevent autosubmitting
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var password = document.getElementById("passsword").value;
     console.log("The username is " + username + " the password is " + password)
     let teacherLogin = new TeacherLogin(username, password)
     const response = await postData(http_url + "login_teacher", teacherLogin);
-    if (response == "Successfully logged in!") {
+    if (response == "Successfully authenticated") {
         localStorage.setItem("auth", 1);
-        window.location.assign("index.html")
+        window.location.assign("home3.html")
     }
     else {
         validateText.style.display = 'block';
