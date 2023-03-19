@@ -14,7 +14,7 @@ class TeacherLogin{
 submit.addEventListener("click", async(e) => {
     e.preventDefault(); // prevent autosubmitting
     var username = document.getElementById("username").value;
-    var password = document.getElementById("passsword").value;
+    var password = document.getElementById("password").value;
     console.log("The username is " + username + " the password is " + password)
     let teacherLogin = new TeacherLogin(username, password)
     const response = await postData(http_url + "login_teacher", teacherLogin);
