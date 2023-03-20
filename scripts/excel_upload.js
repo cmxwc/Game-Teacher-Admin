@@ -76,8 +76,15 @@ submit.addEventListener("click", async(e) => {
     var subject = document.getElementById("subject").value;
     var questionList = parseExcelArray(sheet_data);
 
-    const response = await postData(http_url + "update_question_subject_bank?subject=" + subject, questionList);
-    console.log(response);
+    const response1 = await postData(http_url + "delete_question_bank?subject=" + subject, "");
+    console.log(response1);
+
+    for (var i=0; i < questionList.length; i++) {
+        const response2 = await postData(http_url + "add_question", questionList[i]);
+        console.log(response2);
+    }
+    
+    
     
     // var username = document.getElementById("username").value;
     // var password = document.getElementById("password").value;
