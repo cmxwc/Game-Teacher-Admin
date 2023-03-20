@@ -75,31 +75,22 @@ submit.addEventListener("click", async(e) => {
     e.preventDefault(); // prevent autosubmitting
     var subject = document.getElementById("subject").value;
     var questionList = parseExcelArray(sheet_data);
+    if (subject == questionList[0]["questionSubject"])
+    {
+        const response1 = await postData(http_url + "delete_question_bank?subject=" + subject, "");
+        console.log(response1);
 
-    const response1 = await postData(http_url + "delete_question_bank?subject=" + subject, "");
-    console.log(response1);
-
-    for (var i=0; i < questionList.length; i++) {
-        const response2 = await postData(http_url + "add_question", questionList[i]);
-        console.log(response2);
+        for (var i=0; i < questionList.length; i++) {
+            const response2 = await postData(http_url + "add_question", questionList[i]);
+            console.log(response2);
+        }
+    }
+    else
+    {
+        console.log("Selected subject does not match question input!!")
     }
     
-    
-    
-    // var username = document.getElementById("username").value;
-    // var password = document.getElementById("password").value;
-    // console.log("The username is " + username + " the password is " + password)
-    // let teacherLogin = new TeacherLogin(username, password)
-    // const response = await postData(http_url + "login_teacher", teacherLogin);
-    // if (response == "Successfully authenticated") {
-    //     localStorage.setItem("auth", 1);
-    //     window.location.assign("home3.html")
-    // }
-    // else {
-    //     validateText.style.display = 'block';
-    // }
 })
-
 
 function parseExcelArray(sheet_data) {
     var questionList = [];
@@ -121,10 +112,8 @@ function parseExcelArray(sheet_data) {
                     questionDifficulty, questionText, questionAns,
                     option1, option2, option3, option4, questionLearningObj);
                 console.log(question); 
-                questionList.push(question);
-                
+                questionList.push(question);   
             }
-            
         }
     console.log("=====Question List======");
     console.log(questionList);
