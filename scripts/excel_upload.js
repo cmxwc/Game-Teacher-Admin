@@ -87,15 +87,14 @@ submit.addEventListener("click", async(e) => {
         for (var i=0; i < questionList.length; i++) {
             const response2 = await postData(http_url + "add_question", questionList[i]);
             console.log(response2);
-        }
-
-        if (response2 == "Question successfully added")
-        {
-            successText.style.display = 'block';
-        }
-        else
-        {
-            errorText.style.display = 'block';
+            if (response2 == "Question successfully added")
+            {
+                successText.style.display = 'block';
+            }
+            else
+            {
+                errorText.style.display = 'block';
+            }
         }
     }
     else
