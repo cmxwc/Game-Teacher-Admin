@@ -75,10 +75,11 @@ excel_file.addEventListener('change', (event) => {
 submit.addEventListener("click", async(e) => {
     e.preventDefault(); // prevent autosubmitting
     var subject = document.getElementById("subject").value;
+    var year = document.getElementById("year").value;
     var questionList = parseExcelArray(sheet_data);
     if (subject == questionList[0]["questionSubject"])
     {
-        const response1 = await postData(http_url + "delete_question_bank?subject=" + subject, "");
+        const response1 = await postData(http_url + "delete_question_bank?subject=" + subject + "&year=" + year, "");
         console.log(response1);
 
         for (var i=0; i < questionList.length; i++) {
