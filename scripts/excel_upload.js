@@ -1,9 +1,10 @@
 import {http_url, fetchData, postData} from './request.js';
 
 class Question {
-    constructor(questionId, questionSubject, questionTopic, questionDifficulty, questionText, questionAns, option1, option2, option3, option4, questionLearningObj) {
+    constructor(questionId, questionSubject, year, questionTopic, questionDifficulty, questionText, questionAns, option1, option2, option3, option4, questionLearningObj) {
         this.questionId = questionId;
         this.questionSubject = questionSubject;
+        this.year = year;
         this.questionTopic = questionTopic;
         this.questionDifficulty = questionDifficulty;
         this.questionText = questionText;
@@ -99,16 +100,17 @@ function parseExcelArray(sheet_data) {
             if (sheet_data[row].length > 0) {
                 var questionId = sheet_data[row][0];
                 var questionSubject = sheet_data[row][1];
-                var questionTopic = sheet_data[row][2];
-                var questionDifficulty = sheet_data[row][3];
-                var questionText = sheet_data[row][4];
-                var questionAns = sheet_data[row][5];
-                var option1 = sheet_data[row][6]
-                var option2 = sheet_data[row][7]
-                var option3 = sheet_data[row][8]
-                var option4 = sheet_data[row][9]
-                var questionLearningObj = sheet_data[row][10];
-                var question = new Question(questionId, questionSubject, questionTopic,
+                var year = sheet_data[row][2]
+                var questionTopic = sheet_data[row][3];
+                var questionDifficulty = sheet_data[row][4];
+                var questionText = sheet_data[row][5];
+                var questionAns = sheet_data[row][6];
+                var option1 = sheet_data[row][7]
+                var option2 = sheet_data[row][8]
+                var option3 = sheet_data[row][9]
+                var option4 = sheet_data[row][10]
+                var questionLearningObj = sheet_data[row][11];
+                var question = new Question(questionId, questionSubject, year, questionTopic,
                     questionDifficulty, questionText, questionAns,
                     option1, option2, option3, option4, questionLearningObj);
                 console.log(question); 
