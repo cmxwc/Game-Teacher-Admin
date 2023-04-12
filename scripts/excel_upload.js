@@ -71,6 +71,8 @@ excel_file.addEventListener('change', (event) => {
 
 });
 
+const errorText = document.querySelector(".errormsg");
+const successText = document.querySelector(".successmsg");
 
 submit.addEventListener("click", async(e) => {
     e.preventDefault(); // prevent autosubmitting
@@ -85,6 +87,15 @@ submit.addEventListener("click", async(e) => {
         for (var i=0; i < questionList.length; i++) {
             const response2 = await postData(http_url + "add_question", questionList[i]);
             console.log(response2);
+        }
+
+        if (response2 == "Question successfully added")
+        {
+            successText.style.display = 'block';
+        }
+        else
+        {
+            errorText.style.display = 'block';
         }
     }
     else
